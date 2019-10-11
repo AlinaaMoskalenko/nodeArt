@@ -1,0 +1,43 @@
+.nav {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  margin: 0 auto;
+
+  &__item {
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    & > a {
+      color: $white;
+      text-decoration: none;
+      font-size: 30px;
+    }
+
+    &_active {
+      text-decoration: underline;
+    }
+
+    &:not(:last-child):after {
+      position: absolute;
+      content: '';
+      width: 2px;
+      height: 30px;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: $white;
+    }
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+}

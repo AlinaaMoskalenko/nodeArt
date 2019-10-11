@@ -15,14 +15,15 @@
   }
 
   .grid-item-1,
+  .grid-item-2,
   .grid-item-6 {
     display: grid;
     justify-content: center;
   }
   
-  .nav {
+  .grid-item-2 {
     grid-area: nav;
-    background-color: lightblue;
+    background-color: $primary;
   }
   
   .slider {
@@ -45,20 +46,20 @@
     background-color: $primary;
   }
 
-  .header-block,
-  .nav-block,
-  .footer-block {
+  .header,
+  .nav,
+  .footer {
     width: 980px;
     min-width: 980px;
     padding: 10px;
   }
 
-  .header-block,
-  .footer-block {
+  .header,
+  .footer {
     display: grid;
   }
 
-  .footer-block {
+  .footer {
     padding-top: 50px;
   }
 
