@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+button,
+input {
+  font: $font-primary;
+  color: $primary;
+}
+
+button,
+input {
+  cursor: pointer;
+  outline: none;
+}
+
+body {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: none;
+}
+
+a {
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+p,
+body {
+  margin: 0;
+  padding: 0;
+}

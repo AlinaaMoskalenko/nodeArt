@@ -1,0 +1,47 @@
+.footer-block {
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: 'left center right';
+  color: $white;
+  padding-top: 50px;
+
+  &__left {
+    grid-area: left;
+    width: 70%;
+  }
+
+  &__center {
+    grid-area: center;
+
+    .link-list {
+      list-style: none;
+
+      &__item {
+        line-height: 26px;
+
+        & > a {
+          color: $white;
+        }
+      }
+    }
+  }
+
+  &__right {
+    grid-area: right;
+
+    .content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &__text {
+        margin-left: 10px;
+        flex-basis: 50%;
+
+        & > a {
+          color: $white;
+          margin-right: 3px;
+        }
+      }
+    }
+  }
+}

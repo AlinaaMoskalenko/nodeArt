@@ -1,0 +1,42 @@
+.header-block {
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 'left right';
+
+  &__left {
+    grid-area: left;
+    display: flex;
+    align-items: center;
+
+    .content__text {
+      margin-left: 10px;
+      flex-basis: 50%;
+
+      .title {
+        font-size: 30px;
+        font-weight: bold;
+        line-height: 26px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  &__right {
+    grid-area: right;
+    justify-self: end;
+    line-height: 46px;
+    text-align: right;
+
+    .phone {
+      font-family: $font-family-OpenSans;
+      font-size: 40px;
+    }
+
+    .feedback-link {
+      color: $primary;
+      font-size: 24px;
+      font-weight: bold;
+      text-decoration-style: dashed;
+    }
+  }
+}

@@ -1,0 +1,8 @@
+@import './font.scss';
+
+$font-family-primary: 'PT Sans', sans-serif;
+$font-family-OpenSans: 'Open Sans', Arial, Helvetica, sans-serif;
+$font-size-primary: 14px;
+$line-height-primary: 22px;
+
+$font-primary: #{$font-size-primary}/#{$line-height-primary} $font-family-primary;
