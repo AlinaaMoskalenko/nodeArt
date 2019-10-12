@@ -1,88 +1,150 @@
 .grid-container {
   height: 100vh;
+
   display: grid;
-  grid-template-rows: 230px 80px 400px 30px auto 220px;
+  grid-template-columns: [start] 1fr [col-line-2] 980px [col-line-3] 1fr [end];
+  grid-template-rows: 230px repeat(4, auto) 220px;
   grid-template-areas: 'header'
                        'nav'
                        'slider'
                        'secondary-nav'
-                       'main'
+                       'content'
                        'footer';  
 
   .grid-item-1 {
     grid-area: header;
     background-color: $lightgray-bg;
+
+    display: grid;
+    grid-template-columns: [header-start] 1fr [header-line-2] 980px [header-line-3] 1fr [header-end];
+    align-content: center;
+
+    .header {
+      grid-column: header-line-2 / header-line-3;
+      padding: 10px;
+
+      display: grid;
+      grid-template-columns: [line-1] 1fr [line-2] 1fr [line-3];
+
+      &__left-block {
+        grid-column: line-1 / line-2;
+      }
+
+      &__right-block {
+        grid-column: line-2 / line-3;
+      }
+    }
   }
 
-  .grid-item-1,
-  .grid-item-2,
-  .grid-item-6 {
-    display: grid;
-    justify-content: center;
-  }
-  
   .grid-item-2 {
+    height: 80px;
     grid-area: nav;
     background-color: $primary;
+
+    display: grid;
+    grid-template-columns: [nav-start] 1fr [nav-line-2] 980px [nav-line-3] 1fr [nav-end];
+
+    .nav {
+      grid-column: nav-line-2 / nav-line-3;
+      align-self: center;
+      justify-self: center;
+    }
   }
-  
-  .slider {
+
+  .grid-item-3 {
+    height: 400px;
     grid-area: slider;
-    background-color: lightcoral;
   }
-  
-  .secondary-nav {
+
+  .grid-item-4 {
+    height: 30px;
     grid-area: secondary-nav;
-    background-color: yellow;
+    align-self: center;;
   }
   
-  .main {
-    grid-area: main;
-    background-color: lightcyan;
+  .grid-item-5 {
+    height: 1350px;
+    grid-area: content;
+    padding-top: 20px;
+
+    display: grid;
+    grid-template-columns: [content-start] 1fr [content-line-2] 2fr [content-end];
+   
+    &__left-block {
+      grid-column: content-start / content-line-2;
+    }
+
+    &__center-block {
+      grid-column: content-line-2 / content-end;
+
+      display: grid;
+      grid-template-rows: [start] 1fr [row-2] 110px [row-3] 440px [end];
+
+      #card-container {
+        grid-row: start / row-2;
+
+        display: grid;
+        grid-template-columns: repeat(3, 250px);
+        grid-template-rows: repeat(2, 380px);
+        grid-gap: 20px;
+      }
+
+      .pagination {
+        grid-row: row-2 / row-3;
+        padding-top: 30px;
+        justify-self: center;
+      }
+
+      .company-description {
+        grid-row: row-3 / end;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 40px;
+        border-top: 1px solid $primary;
+        padding-top: 30px;
+      }
+    }
   }
   
   .grid-item-6 {
     grid-area: footer;
     background-color: $primary;
-  }
 
-  .header,
-  .nav,
-  .footer {
-    width: 980px;
-    min-width: 980px;
-    padding: 10px;
-  }
-
-  .header,
-  .footer {
     display: grid;
-  }
+    grid-template-columns: [footer-start] 1fr [footer-line-2] 980px [footer-line-3] 1fr [footer-end];
+    align-content: center;
 
-  .footer {
-    padding-top: 50px;
-  }
+    .footer {
+      grid-column: footer-line-2 / footer-line-3;
+      padding: 10px;
 
-  .logo {
-    &_main {
-      width: 100px;
-      height: 100px;
-      overflow: hidden;
-      background-color: $primary;
-    }
-  
-    &_dev {
-      width: 38px;
-      height: 38px;
-      overflow: hidden;
-    }
-  
-    &_main,
-    &_dev {
-      & > img {
-        width: 100%;
-        height: 100%;
+      display: grid;
+      grid-template-columns: [line-1] 1fr [line-2] 1fr [line-3] 1fr [line-4];
+
+      &__left-block {
+        grid-column: line-1 / line-2;
+      }
+
+      &__centralBlock {
+        grid-column: line-2 / line-3;
+      }
+
+      &__right-block {
+        grid-column: line-3 / line-4;
       }
     }
+  }
+
+  .grid-item-1,
+  .grid-item-2,
+  .grid-item-3,
+  .grid-item-6 {
+    grid-column: start / end;
+  }
+
+  .grid-item-4,
+  .grid-item-5 {
+    grid-column: col-line-2 / col-line-3;
   }
 }

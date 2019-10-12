@@ -1,0 +1,49 @@
+.sidebar-list {
+  list-style: none;
+  font-size: $font-size-larger;
+  line-height: $line-height-larger;
+  margin-bottom: 100px;
+
+  &__item {
+    & > a {
+      color: $primary;
+      text-decoration: none;
+    }
+
+    &_active > a {
+      text-decoration: underline;
+    }
+  }
+
+  &__subitem {
+    font-size: $font-size-primary;
+    list-style-type: disc;
+    margin-left: 20px;
+
+    & > a {
+      color: $primary;
+      text-decoration: none;
+    }
+
+    &_active {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  }
+}
+
+.price-list {
+  text-align: center;
+  cursor: pointer;
+  
+  & > img {
+    width: 97px;
+    height: 111px;
+  }
+
+  & > p {
+    font-size: $font-size-xxx-large;
+    line-height: $line-height-larger;
+    font-weight: bold;
+  }
+}

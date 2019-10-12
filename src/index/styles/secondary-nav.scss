@@ -1,0 +1,32 @@
+.secondary-nav {
+  display: flex;
+  list-style: none;
+  
+  &__item {
+    padding: 0 10px;
+    position: relative;
+
+    & > a {
+      color: $primary;
+      line-height: $line-height-smaller;
+    }
+
+    &:not(:last-child):after {
+      position: absolute;
+      content: '/';
+      right: 0;
+    }
+
+    &_active > a {
+      text-decoration: none;
+    }
+
+    &:first-child {
+      padding-left: 0;
+    }
+  
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+}

@@ -1,93 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
-  <title>NodeArt</title>
-</head>
-<body>
-  <div class="grid-container">
-    <header class="grid-item-1">
-     <div class="header">
-       <div class="header__left">
-          <div class="logo_main">
-            <img src="#" alt="Company logo">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <title>NodeArt</title>
+  </head>
+  <body>
+    <div class="grid-container">
+      <header class="grid-item-1">
+        <div class="header">
+          <div class="header__left-block">
+            <div class="logo">
+              <img src="#" alt="Company logo" />
+            </div>
+            <div class="content">
+              <p class="title">Название компании</p>
+              <p>cамая клевая компания</p>
+            </div>
           </div>
-          <div class="content__text">
-            <p class="title">Название компании</p>
-            <p>cамая клевая компания</p>
+
+          <div class="header__right-block">
+            <p class="phone">+7(499) 777-77-77</p>
+            <p class="phone">+7(499) 777-77-77</p>
+            <a href="#" class="feedback-link">Обратная связь</a>
           </div>
-       </div>
+        </div>
+      </header>
 
-       <div class="header__right">
-        <p class="phone">+7(499) 777-77-77</p>
-        <p class="phone">+7(499) 777-77-77</p>
-        <a href="#" class="feedback-link">Обратная связь</a>
-      </div>
-     </div>
-    </header>
-    
-    <nav class="grid-item-2">
-      <ul class="nav">
-        <li class="nav__item">
-          <a href="#">Главная</a>
-        </li>
-        <li class="nav__item">
-          <a href="#">Каталог</a>
-        </li>
-        <li class="nav__item nav__item_active">
-          <a href="#">Доставка и оплата</a>
-        </li>
-        <li class="nav__item">
-          <a href="#">Прайс-лист</a>
-        </li>
-        <li class="nav__item">
-          <a href="#">Контакты</a>
-        </li>
-      </ul>
-    </nav>
+      <nav class="grid-item-2">
+        <ul class="nav">
+          <li class="nav__item">
+            <a href="#">Главная</a>
+          </li>
+          <li class="nav__item">
+            <a href="#">Каталог</a>
+          </li>
+          <li class="nav__item nav__item_active">
+            <a href="#">Доставка и оплата</a>
+          </li>
+          <li class="nav__item">
+            <a href="#">Прайс-лист</a>
+          </li>
+          <li class="nav__item">
+            <a href="#">Контакты</a>
+          </li>
+        </ul>
+      </nav>
 
-    <div class="grid-item slider">Slider</div>
-    <nav class="grid-item secondary-nav">Links</nav>
-    <main class="grid-item main">content</main>
+      <div class="grid-item-3"></div>
 
-    <footer class="grid-item-6">
-      <div class="footer">
-        <div class="footer__left">© 2012–2013 ЗАО «Компания» info@name.ru</div>
-        <div class="footer__center">
-          <ul class="link-list">
-            <li class="link-list__item">
-              <a href="#">Главная</a>
-            </li>
-            <li class="link-list__item">
-              <a href="#">Каталог</a>
-            </li>
-            <li class="link-list__item">
-              <a href="#">Доставка и оплата</a>
-            </li>
-            <li class="link-list__item">
-              <a href="#">Прайс-лист</a>
-            </li>
-            <li class="link-list__item">
-              <a href="#">Контакты</a>
-            </li>
+      <nav class="grid-item-4">
+        <ul class="secondary-nav">
+          <li class="secondary-nav__item">
+            <a href="#">Главная</a>
+          </li>
+          <li class="secondary-nav__item">
+            <a href="#">Каталог</a>
+          </li>
+          <li class="secondary-nav__item secondary-nav__item_active">
+            <a href="#">Бытовая техника</a>
+          </li>
+        </ul>
+      </nav>
+
+      <main class="grid-item-5">
+        <div class="grid-item-5__left-block">
+          <ul class="sidebar-list">
+            <ul class="sidebar-list__item"><a href="#">Автомобили</a></ul>
+            <ul class="sidebar-list__item sidebar-list__item_active"><a href="#">Бытовая техника</a>
+              <li class="sidebar-list__subitem sidebar-list__subitem_active"><a href="#">Микроволновки</a></li>
+              <li class="sidebar-list__subitem"><a href="#">Холодильники</a></li>
+              <li class="sidebar-list__subitem"><a href="#">Посудомоечные машины</a></li>
+              <li class="sidebar-list__subitem"><a href="#">Чайники</a></li>
+            </ul>
+            <ul class="sidebar-list__item"><a href="#">Мобильная техника</a></ul>
+            <ul class="sidebar-list__item"><a href="#">Компьютеры</a></ul>
+            <ul class="sidebar-list__item"><a href="#">Одежда</a></ul>
+            <ul class="sidebar-list__item"><a href="#">Недвижимость</a></ul>
           </ul>
+
+          <div class="price-list">
+            <img src="../../assets/images/MS - EXCEL.png" alt="Excel file">
+            <p>Прайс-лист</p>
+          </div>
         </div>
-        <div class="footer__right">
-          <div class="content">
-            <div class="logo_dev">
-              <img src="../../assets/images/dev-logo.png" alt="Company logo">
+        <div class="grid-item-5__center-block">
+          <div id="card-container"></div>
+          <div class="pagination">
+            <span class="pagination__item">1</span>
+            <span class="pagination__item">2</span>
+            <span class="pagination__item pagination__item_active">3</span>
+            <span class="pagination__item">4</span>
+            <span class="pagination__item">5</span>
+            <span class="pagination__item">6</span>
+            <span class="pagination__item">7</span>
+          </div>
+          <div class="company-description">
+            <div class="company-description__left-content">
+              Компания «Пиксель Плюс» существует более 6 лет,
+              за это время мы принимали участие в разработке более чем
+              70 сайтов, поэтому можем уверенно называть себя профессионалами.
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              A temporibus saepe sed sint repellat expedita distinctio inventore
+              voluptatibus odio adipisci dignissimos harum libero amet, maiores
+              laboriosam laudantium voluptatem accusantium omnis.
             </div>
-            <div class="content__text">
-              <a href="#">Разработка сайта </a>
-              <span> — компания «Пиксель Плюс»</span>
+            <div class="company-description__right-content">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet nisi obcaecati commodi,
+              necessitatibus quas quaerat blanditiis quae veritatis,
+              asperiores accusantium est soluta sed quia cum fuga fugiat optio at consectetur.
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Maxime at harum optio asperiores obcaecati et! Vero quam iure
+              eum magni veritatis doloribus asperiores quos vitae labore id, illo autem molestias.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Non officiis illo aperiam labore
+              nostrum quos sapiente sequi distinctio architecto vitae rerum est pariatur impedit, dolor porro quisquam similique recusandae voluptatibus?
             </div>
           </div>
         </div>
-      </div>
-    </footer>
-  </div>
-</body>
+      </main>
+
+      <footer class="grid-item-6">
+        <div class="footer">
+          <div class="footer__left-block">
+            © 2012–2013 ЗАО «Компания» info@name.ru
+          </div>
+          <div class="footer__center-block">
+            <ul class="list">
+              <li class="list__item">
+                <a href="#">Главная</a>
+              </li>
+              <li class="list__item">
+                <a href="#">Каталог</a>
+              </li>
+              <li class="list__item">
+                <a href="#">Доставка и оплата</a>
+              </li>
+              <li class="list__item">
+                <a href="#">Прайс-лист</a>
+              </li>
+              <li class="list__item">
+                <a href="#">Контакты</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__right-block">
+            <div class="content">
+              <div class="content__logo">
+                <img
+                  src="../../assets/images/dev-logo.png"
+                  alt="Company logo"
+                />
+              </div>
+              <div class="content__text">
+                <a href="#">Разработка сайта </a>
+                <span> — компания «Пиксель Плюс»</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
 </html>

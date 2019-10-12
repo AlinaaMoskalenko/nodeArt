@@ -1,8 +1,5 @@
 .nav {
   display: flex;
-  justify-content: center;
-  flex-grow: 1;
-  margin: 0 auto;
 
   &__item {
     list-style: none;
@@ -14,7 +11,7 @@
     & > a {
       color: $white;
       text-decoration: none;
-      font-size: 30px;
+      font-size: $font-size-xxx-large;
     }
 
     &_active {
