@@ -54,12 +54,14 @@
   .grid-item-3 {
     height: 400px;
     grid-area: slider;
+    position: relative;
+    overflow: hidden;
   }
 
   .grid-item-4 {
     height: 30px;
     grid-area: secondary-nav;
-    align-self: center;;
+    align-self: center;
   }
   
   .grid-item-5 {

@@ -1,0 +1,34 @@
+.slider {
+  display: flex;
+  justify-content: center;
+
+  &__photo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: 0.5s;
+
+    &_shown {
+      opacity: 1;
+      transition: 1.5s;
+      transition-delay: 0.5s;
+    }
+  }
+
+  &__arrows {
+    width: 980px;
+    min-width: 980px;
+    display: flex;;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+
+    & > img {
+      width: 34px;
+      height: 61px;
+      cursor: pointer;
+    }
+  }
+}
