@@ -9,7 +9,9 @@ import slide2 from '../../assets/images/slide-2.png';
 { // slider block
   const slider = document.getElementById('slider');
   const slideArray = renderSlider([ slide1, slide2 ], slider);
-  toggleSlider(slideArray);
+  const arrowsContainer = document.querySelector('.slider__arrows');
+  const arrows = arrowsContainer.querySelectorAll('.arrow');
+  toggleSlider(slideArray, arrows);
 }
 
 { // catalog block
