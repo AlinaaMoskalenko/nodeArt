@@ -141,7 +141,8 @@
   .grid-item-1,
   .grid-item-2,
   .grid-item-3,
-  .grid-item-6 {
+  .grid-item-6,
+  .grid-item-7 {
     grid-column: start / end;
   }
 
@@ -149,4 +150,29 @@
   .grid-item-5 {
     grid-column: col-line-2 / col-line-3;
   }
+
+  .grid-item-7 {
+    grid-row: 1 / 8;
+    background-color: $lightblack;
+    display: none;
+    z-index: 1;
+
+    &_shown {
+      display: block;
+      animation: feedback 0.3s linear;
+    }
+  }
+
+  &_hidden {
+    overflow: hidden;
+    
+    & > div:not(.grid-item-7) {
+      pointer-events: none;
+    }
+  }
+}
+
+@keyframes feedback {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
