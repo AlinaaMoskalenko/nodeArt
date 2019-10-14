@@ -2,31 +2,17 @@ import './index.scss';
 
 import { renderSlider, toggleSlider } from './scripts/slider';
 import { renderCard } from './scripts/renderCard';
+import FeedbackFrom from './scripts/feedback-form';
 
 import slide1 from '../../assets/images/slide-1.png';
 import slide2 from '../../assets/images/slide-2.png';
 
 { // feedback block
-  const feedbackLink = document.getElementById('feedback');
-  const container = document.querySelector('.grid-container');
-  const formContainer = document.getElementById('feedback-form');
-  const form = formContainer.querySelector('.form');
-  const closeBtn = form.querySelector('.form__close-btn');
+  const feedbackLink = document.getElementById('feedback-link');
+  const feedbackFormContainer = document.getElementById('feedback-form-container');
+  const gridContainer = document.querySelector('.grid-container');
 
-  feedbackLink.addEventListener('click', () => {
-    container.classList.add('grid-container_hidden');
-    formContainer.classList.add('grid-item-7_shown');
-
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      console.log('hello form');
-    });
-  });
-
-  closeBtn.addEventListener('click', () => {
-    container.classList.remove('grid-container_hidden');
-    formContainer.classList.remove('grid-item-7_shown');
-  });
+  new FeedbackFrom(feedbackFormContainer, feedbackLink, gridContainer);
 }
 
 { // slider block

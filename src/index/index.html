@@ -27,7 +27,7 @@
           <div class="header__right-block">
             <p class="phone">+7(499) 777-77-77</p>
             <p class="phone">+7(499) 777-77-77</p>
-            <a id="feedback" href="#" class="feedback-link">Обратная связь</a>
+            <a id="feedback-link" href="#" class="feedback-link">Обратная связь</a>
           </div>
         </div>
       </header>
@@ -190,24 +190,24 @@
         </div>
       </footer>
 
-      <div id="feedback-form" class="grid-item-7">
+      <div id="feedback-form-container" class="grid-item-7">
         <form class="form">
           <h1 class="form__title">Обратная связь</h1>
           <div class="form__input-block">
             <h4>Ваше имя *</h4>
-            <input type="text" class="form__name" />
+            <input type="text" name="name" class="form__name" />
           </div>
           <div class="form__input-block">
             <h4>Телефон *</h4>
-            <input type="tel" class="form__phone" />
+            <input type="text" name="tel" class="form__tel" />
           </div>
           <div class="form__input-block">
             <h4>Email *</h4>
-            <input type="text" class="form__email" />
+            <input type="text" name="email" class="form__email" />
           </div>
           <div class="form__input-block">
             <h4>Сообщение</h4>
-            <textarea class="form__comment"></textarea>
+            <textarea name="comment" class="form__comment"></textarea>
           </div>
           <button type="submit" class="form__submit-btn">Отправить</button>
           <div class="form__close-btn"></div>
