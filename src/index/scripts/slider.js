@@ -1,76 +1,76 @@
-const renderSlider = (imgArray, rootElement) => {
-  let id = 0;
-  let array = [];
+export default class Slider {
+  constructor(rootElement, elements) {
+    this.rootElement = rootElement;
+    this.elements = elements;
+    this.currentSlide = 0;
+    this.isSlide = this.isSlide.bind(this);
 
-  for (let item of imgArray) {
-    const img = document.createElement('img');
-
-    img.setAttribute('id', id);
-    img.setAttribute('src', item);
-    img.setAttribute('alt', 'Slider photo');
-
-    const classes =
-      id === 0 ? ['slider__photo', 'slider__photo_shown'] : ['slider__photo'];
-    img.classList.add(...classes);
-
-    rootElement.appendChild(img);
-
-    array.push(img);
-    id++;
+    this.render();
+    this.autoPlay(1, this.slides);
   }
 
-  return array;
-};
+  render() {
+    let id = 0;
+    this.slides = [];
 
-const toggleSlider = (slideArray, arrows) => {
-  let nextSlideId = 1;
-  const timeInterval = 4000; //4s
-  let timer = null;
+    for (let item of this.elements) {
+      this.img = document.createElement('img');
 
-  const isSlide = (prevId, id) => {
-    slideArray[prevId].classList.remove('slider__photo_shown');
-    slideArray[id].classList.add('slider__photo_shown');
-  };
+      this.img.setAttribute('id', id);
+      this.img.setAttribute('src', item);
+      this.img.setAttribute('alt', 'Slider photo');
 
-  const toggleByArrows = (idx) => {
-    const currentSlideId = +document
-      .querySelector('.slider__photo_shown')
-      .getAttribute('id');
-    
-    let nextSlideId = currentSlideId + idx;
-    if (nextSlideId === slideArray.length) {
-      nextSlideId = 0;
-    } 
+      const classes = id === 0 ? ['slider__photo', 'slider__photo_shown'] : ['slider__photo'];
+      this.img.classList.add(...classes);
 
-    if (nextSlideId < 0) {
-      nextSlideId = slideArray.length - 1;
+      this.rootElement.appendChild(this.img);
+
+      this.slides.push(this.img);
+      id ++;
     }
 
-    isSlide(currentSlideId, nextSlideId);
-    setTimeout(() => autoPlay(nextSlideId + 1, slideArray), 2000);
-  };
+    this.toggles = this.rootElement.querySelectorAll('.arrow');
 
-  const autoPlay = (id, array) => {
-    nextSlideId = id !== array.length ? id : 0;
-
-    timer = setInterval(() => {
-      const currentSlideId = nextSlideId === 0 ? array.length - 1 : nextSlideId - 1;
-      isSlide(currentSlideId, nextSlideId);
-
-      nextSlideId = nextSlideId === array.length - 1 ? 0 : nextSlideId + 1;
-    }, timeInterval);
-  };
-
-  for (let i = 0; i < arrows.length; i++) {
-    arrows[i].addEventListener('click', () => {
-      clearInterval(timer);
-
-      const arrowIdx = i === 0 ? -1 : 1; // -1 - left arrow, 1 - right arrow
-      toggleByArrows(arrowIdx);
-    });
+    for (let toggle of this.toggles) {
+      toggle.addEventListener('click', ({ target: { id: idx }}) => this.onToggle(idx));
+    }
   }
 
-  autoPlay(nextSlideId, slideArray);
-};
+  onToggle(idx) {
+    clearInterval(this.timer);
+    clearTimeout(this.timeOutTimer);
 
-export { renderSlider, toggleSlider };
+    const value = idx === 'left' ? -1 : 1;
+    let nextSlide = this.currentSlide + value;
+
+    if (nextSlide === this.slides.length) {
+      nextSlide = 0;
+    } 
+
+    if (nextSlide < 0) {
+      nextSlide = this.slides.length - 1;
+    }
+
+    this.isSlide(this.currentSlide, nextSlide, this.slides);
+    this.timeOutTimer = setTimeout(() => this.autoPlay(nextSlide + 1, this.slides), 2000);
+  }
+
+  autoPlay(slideId, slides) {
+    let idx = slideId !== slides.length ? slideId : 0;
+
+    this.timer = setInterval(() => {
+      const currentSlide = idx === 0 ? slides.length - 1 : idx - 1;
+      const nextSlide = idx === slides.length ? 0 : idx;
+      this.isSlide(currentSlide, nextSlide, slides);
+
+      idx = idx === slides.length - 1 ? 0 : idx + 1;
+    }, 4000);
+  }
+
+  isSlide(currentId, nextId, slides) {
+    slides[currentId].classList.remove('slider__photo_shown');
+    slides[nextId].classList.add('slider__photo_shown');
+
+    this.currentSlide = nextId;
+  }
+}
