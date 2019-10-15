@@ -7,7 +7,8 @@
 
 html,
 button,
-input {
+input,
+textarea {
   font: 14px/22px "PT Sans", sans-serif;
   color: #767676; }
 
