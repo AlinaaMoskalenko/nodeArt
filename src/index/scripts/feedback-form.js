@@ -58,10 +58,8 @@ export default class FeedbackForm {
 
   onSubmit(e) {
     e.preventDefault();
-    let valid = true;
 
     if (this.name.value === '') {
-      valid = false;
       this.nameError = true;
       this.onError(this.name, this.emptyFieldText);
 
@@ -77,13 +75,10 @@ export default class FeedbackForm {
     }
 
     if (this.tel.value === '') {
-      valid = false;
       this.telError = true;
       this.onError(this.tel, this.emptyFieldText);
 
     } else {
-      /* +380935478658, 380935478658, +38(093)-547-86-58, 38(093)-5478658, +38(093) 547-86-58
-        38(093) 5478658, +38(093)547-86-58, 38(093)5478658, +38(093)547-8658, +38(093)54786-58 ... */
       const regExp = /(^(\+|)[0-9]{11,}$)|(^(\+|)[0-9]{1,2}\([0-9]{3}\)(\-|\ |)[0-9]{3}(\-|)[0-9]{2}(\-|)[0-9]{2}$)/g;
       if (!regExp.test(this.tel.value) && this.tel.value !== this.emptyFieldText) {
         this.onError(this.tel, 'Формат номера введен не корректно!');
@@ -95,7 +90,6 @@ export default class FeedbackForm {
     }
 
     if (this.email.value === '') {
-      valid = false;
       this.emailError = true;
       this.onError(this.email, this.emptyFieldText);
 
@@ -110,7 +104,7 @@ export default class FeedbackForm {
       }
     }
 
-    if (valid && !this.nameError && !this.telError && !this.emailError) {
+    if (!this.nameError && !this.telError && !this.emailError) {
       console.log('Form submited!');
       console.log(`Name: ${this.name.value}`);
       console.log(`Tel: ${this.tel.value}`);
