@@ -47,7 +47,7 @@
     "@fortawesome/fontawesome-free": "^5.3.1",
     "babel-polyfill": "^6.26.0",
     "font-awesome": "^4.7.0",
-    "jquery": "^3.2.1",
+    "jquery": "^3.5.0",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
     "react-router": "^4.3.1",
